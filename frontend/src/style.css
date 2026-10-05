@@ -1,0 +1,27 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f8f5ee; background: #16151c; font-synthesis: none; text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; } button { cursor: pointer; } button:disabled { cursor: not-allowed; }
+.page-shell { min-height: 100vh; display: grid; place-items: center; position: relative; isolation: isolate; overflow: hidden; padding: 32px 18px; background: #1a1820 url('/img/fgo.png') center / cover no-repeat; }
+.page-shell::before { content: ""; position: absolute; inset: -24px; z-index: -2; background: inherit; filter: blur(12px) saturate(.8); transform: scale(1.04); }
+.page-shell::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(14, 15, 21, .53); }
+.login-panel { width: min(100%, 438px); padding: clamp(30px, 6vw, 52px); border: 1px solid rgba(255, 255, 255, .22); border-radius: 24px; background: rgba(24, 25, 33, .56); box-shadow: 0 24px 80px rgba(0, 0, 0, .38), inset 0 1px 0 rgba(255, 255, 255, .12); backdrop-filter: blur(22px) saturate(1.18); }
+.brand-mark { color: #d7b878; font-size: 11px; letter-spacing: .18em; font-weight: 700; }
+h1 { margin: 18px 0 8px; font-size: clamp(30px, 8vw, 42px); line-height: 1.1; letter-spacing: 0; }
+.subtitle { margin: 0 0 34px; color: rgba(248, 245, 238, .66); font-size: 14px; line-height: 1.6; }
+label { display: block; margin: 0 0 9px; color: rgba(248, 245, 238, .82); font-size: 13px; font-weight: 600; }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-bottom: 22px; }
+input { width: 100%; min-width: 0; height: 50px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 12px; outline: none; padding: 0 15px; color: #fff; background: rgba(255, 255, 255, .09); transition: border-color .2s, background .2s, box-shadow .2s; }
+input::placeholder { color: rgba(248, 245, 238, .42); } input:focus { border-color: rgba(215, 184, 120, .9); background: rgba(255, 255, 255, .13); box-shadow: 0 0 0 3px rgba(215, 184, 120, .12); }
+.send-button { min-width: 110px; height: 50px; border: 1px solid rgba(215, 184, 120, .55); border-radius: 12px; padding: 0 14px; color: #f2d59a; background: rgba(215, 184, 120, .11); font-size: 13px; font-weight: 700; }
+.send-button:hover:not(:disabled) { background: rgba(215, 184, 120, .2); } .send-button:disabled { opacity: .42; }
+.primary-button { width: 100%; height: 54px; margin-top: 24px; border: 0; border-radius: 12px; color: #17151a; background: #e1bf78; font-weight: 800; box-shadow: 0 10px 22px rgba(190, 145, 60, .24); transition: transform .2s, filter .2s, opacity .2s; }
+.primary-button:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.06); } .primary-button:disabled { opacity: .38; }
+.button-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; vertical-align: 1px; background: currentColor; }
+.status { margin: 18px 0 0; border-radius: 10px; padding: 11px 13px; font-size: 13px; line-height: 1.5; }
+.status.success { color: #ccebd3; background: rgba(74, 157, 93, .18); } .status.error { color: #ffd0c9; background: rgba(180, 66, 54, .2); }
+.footnote { margin: 24px 0 0; color: rgba(248, 245, 238, .42); font-size: 11px; line-height: 1.5; }
+@media (max-width: 520px) { .login-panel { padding: 28px 22px; border-radius: 20px; } .input-row { grid-template-columns: 1fr; } .send-button { width: 100%; } }

@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+fgo:
+  upstream:
+    enabled: false
+    connect-timeout-ms: 5000
+    read-timeout-ms: 15000
+    send-url: https://line1-sdk-center-login-sh.biligame.net/api/external/otp/send/v3
+    login-url: https://line1-sdk-center-login-sh.biligame.net/api/external/login/otp/v3
+    headers:
+      User-Agent: "Mozilla/5.0 BSGameSDK"
+      Content-Type: "application/x-www-form-urlencoded"
+    common-params: {}
